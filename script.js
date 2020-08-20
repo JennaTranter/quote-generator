@@ -47,7 +47,7 @@ async function getQuote() {
     }
     quoteText.innerText = data.quoteText;
     // Stop Loader, Show Quote
-      complete();
+    complete();
   } catch (error) {
     getQuote();
   }
@@ -58,7 +58,7 @@ async function getQuote() {
 function tweetQuote() {
   const quote = quoteText.innerText;
   const author = authorText.innerText;
-  const twitterUrl = 'https://twitter.com/intent/tweet${quote} - ${author}';
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${quote} - ${author}`;
   window.open(twitterUrl, '_blank');
 }
 
